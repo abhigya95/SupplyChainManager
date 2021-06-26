@@ -20,7 +20,5 @@ contract Item{
         pricePaid += msg.value;
         (bool success , )= address(parentContract).call{value:(msg.value)}(abi.encodeWithSignature("triggerPayment(uint256)",index));
         require(success, "The transaction was not successful, canceling");
-    }
-    
-    
+    }   
 }
